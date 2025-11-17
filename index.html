@@ -2,150 +2,269 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Christmas UNR - Content ID Dispute</title>
+  <title>Christmas UNR - Giáng Sinh An Lành</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Segoe UI', sans-serif; margin: 0; background: linear-gradient(135deg, #ff9a9e, #fad0c4); color: #1a1a1a; min-height: 100vh; }
-    .container { max-width: 960px; margin: 30px auto; background: white; padding: 35px; border-radius: 20px; box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
-    h1 { text-align: center; color: #c62828; margin: 0 0 10px; font-size: 28px; }
-    .subtitle { text-align: center; color: #d32f2f; margin-bottom: 25px; font-weight: bold; font-size: 16px; }
-    label { font-weight: 600; display: block; margin: 20px 0 8px; color: #333; }
-    input, select { width: 100%; padding: 14px; border: 1.5px solid #ddd; border-radius: 10px; font-size: 16px; transition: all 0.2s; }
-    input:focus, select:focus { border-color: #c62828; outline: none; box-shadow: 0 0 8px rgba(198,40,40,0.2); }
-    button { 
-      margin: 28px 0 10px; padding: 16px; background: #c62828; color: white; border: none; border-radius: 10px; 
-      font-weight: bold; font-size: 18px; cursor: pointer; width: 100%; transition: 0.3s;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
     }
-    button:hover { background: #b71c1c; transform: translateY(-2px); }
-    .copy-btn { background: #2e7d32; margin-top: 12px; width: auto; padding: 10px 20px; font-size: 15px; border-radius: 8px; }
-    .output { margin-top: 25px; padding: 22px; border: 1px solid #e0e0e0; background: #fffde7; border-radius: 12px; white-space: pre-wrap; font-family: 'Courier New', monospace; line-height: 1.7; font-size: 15px; }
-    .success { color: #2e7d32; font-weight: bold; text-align: center; margin: 12px 0; }
-    .error { color: #c62828; font-weight: bold; text-align: center; }
-    .info { font-size: 14px; color: #666; margin-top: 5px; text-align: center; }
-    .wm-logo { text-align: center; margin: 15px 0; font-weight: bold; color: #d32f2f; }
-    .guide { background: #e3f2fd; padding: 15px; border-radius: 10px; margin: 20px 0; font-size: 15px; line-height: 1.6; border-left: 5px solid #1976d2; }
+
+    /* TUYẾT RƠI */
+    .snowflake {
+      position: absolute; color: #fff; font-size: 1.2em; opacity: 0.9;
+      animation: fall linear infinite; pointer-events: none; user-select: none;
+    }
+    @keyframes fall {
+      to { transform: translateY(100vh); }
+    }
+
+    /* CÂY THÔNG NOEL */
+    .christmas-tree {
+      position: fixed; bottom: 0; right: 5%; width: 180px; height: 220px; z-index: 1;
+      background: radial-gradient(circle at 50% 0%, #0f5132, #14532d);
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    }
+    .tree::before { content: "⭐"; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 28px; animation: blink 1.5s infinite; }
+    @keyframes blink { 50% { opacity: 0.3; } }
+
+    /* CONTAINER CHÍNH */
+    .container {
+      max-width: 980px; margin: 40px auto; padding: 40px; background: rgba(255,255,255,0.95);
+      border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.3); color: #1a1a1a; position: relative; z-index: 10;
+    }
+    h1 {
+      text-align: center; font-family: 'Mountains of Christmas', cursive; font-size: 42px; color: #c62828;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.2); margin-bottom: 10px;
+    }
+    .subtitle { text-align: center; font-weight: 600; color: #d32f2f; margin-bottom: 20px; font-size: 17px; }
+    .wm-logo { text-align: center; font-weight: bold; color: #b71c1c; margin: 15px 0; font-size: 16px; }
+
+    label {
+      font-weight: 600; display: block; margin: 22px 0 10px; color: #1e3c72; font-size: 17px;
+    }
+    input, select {
+      width: 100%; padding: 16px; border: 2px solid #ddd; border-radius: 12px; font-size: 16px;
+      transition: all 0.3s; background: #f8f9fa;
+    }
+    input:focus, select:focus {
+      border-color: #c62828; outline: none; box-shadow: 0 0 12px rgba(198,40,40,0.3); background: #fff;
+    }
+
+    button {
+      margin: 30px 0 15px; padding: 18px; background: linear-gradient(45deg, #c62828, #d32f2f); color: white;
+      border: none; border-radius: 14px; font-weight: bold; font-size: 19px; cursor: pointer; width: 100%;
+      box-shadow: 0 6px 15px rgba(198,40,40,0.4); transition: all 0.3s;
+    }
+    button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(198,40,40,0.5); }
+
+    .copy-btn {
+      background: #2e7d32; margin-top: 15px; width: auto; padding: 12px 24px; font-size: 16px; border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(46,125,50,0.4);
+    }
+    .copy-btn:hover { background: #1b5e20; }
+
+    .output {
+      margin-top: 30px; padding: 25px; border: 2px dashed #c62828; background: #fff8e1; border-radius: 15px;
+      white-space: pre-wrap; font-family: 'Courier New', monospace; line-height: 1.8; font-size: 15px; color: #1a1a1a;
+    }
+    .success { color: #2e7d32; font-weight: bold; text-align: center; margin: 15px 0; font-size: 17px; }
+    .error { color: #c62828; font-weight: bold; text-align: center; font-size: 17px; }
+
+    .guide {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb); padding: 20px; border-radius: 15px; margin: 25px 0;
+      font-size: 15.5px; line-height: 1.8; border-left: 6px solid #1976d2; color: #0d47a1;
+    }
   </style>
 </head>
 <body>
+
+<!-- TUYẾT RƠI -->
+<div id="snowflakes"></div>
+
+<!-- CÂY THÔNG NOEL -->
+<div class="christmas-tree tree"></div>
 
 <div class="container">
   <h1>Christmas UNR</h1>
   <p class="subtitle">Content ID Dispute Generator – 41 Bài Hát Public Domain</p>
   <div class="wm-logo">Phát hành: Warner Music</div>
 
-  <label>1. Chọn hoặc nhập tên bài hát:</label>
-  <input type="text" id="songTitle" list="songList" placeholder="VD: Silent Night, Come Ye Lofty..." />
+  <label>1. Nhập hoặc chọn tên bài hát:</label>
+  <input type="text" id="songInput" list="songList" placeholder="VD: Silent Night, Jingle Bells..." autocomplete="off" />
   <datalist id="songList"></datalist>
 
   <label>2. Chọn nghệ sĩ cover:</label>
-  <select id="artistSelect">
+  <select id="artistSelect" onchange="updateArtistInfo()">
     <option value="">-- Chọn nghệ sĩ --</option>
+    <option value="Alex C.">Alex C. (Nhạc cũ)</option>
+    <option value="Alistair Hearth">Alistair Hearth (Nhạc mới)</option>
   </select>
-  <div class="info" id="artistInfo"></div>
+  <div class="info" id="artistInfo" style="margin-top:8px; font-style:italic; color:#555;"></div>
 
-  <button onclick="generateDispute()">TẠO NỘI DUNG TRANH CHẤP</button>
+  <button onclick="generateDispute()">TẠO NỘI DUNG KHÁNG NGHỊ</button>
 
   <div class="guide">
     <strong>HƯỚNG DẪN DÁN VÀO YOUTUBE:</strong><br>
     1. Vào YouTube Studio → Content → Video bị claim<br>
-    2. Chọn <strong>Kháng Nghị</strong> → Chọn <strong>"Phạm Vi Thuộc Miền Cộng Đồng"</strong><br>
+    2. Chọn <strong>Kháng nghị</strong> → Chọn <strong>Phạm vi công cộng</strong><br>
     3. <strong>Paste đoạn kháng nghị bên dưới vào ô</strong><br>
-    4. Ký tên: <strong>Ngo Van Dat</strong> (đã tự động thêm)
+    4. <strong>Ký tên: Chủ kênh (Vd. Ngo Van Dat)</strong> → đã tự động thêm
   </div>
 
   <div id="result"></div>
 </div>
 
 <script>
-  // === PUBLIC DOMAIN DATA (41 bài – 3 có, 38 placeholder) ===
+  // === TUYẾT RƠI ===
+  function createSnowflake() {
+    const snow = document.createElement("div");
+    snow.className = "snowflake";
+    snow.textContent = ["❅", "❆", "✻", "✼"][Math.floor(Math.random() * 4)];
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.animationDuration = Math.random() * 5 + 5 + "s";
+    snow.style.fontSize = Math.random() * 10 + 10 + "px";
+    document.getElementById("snowflakes").appendChild(snow);
+    setTimeout(() => snow.remove(), 10000);
+  }
+  setInterval(createSnowflake, 300);
+
+  // === DỮ LIỆU ===
   const pdSongs = {
-    "Come Ye Lofty": {
-      fullTitle: "Come Ye Lofty, Come Ye Lowly",
-      wordsBy: "Traditional Breton carol, English trans. Richard R. Chope (1875)",
-      year: "1875",
-      pdNote: "Traditional Breton carol, English lyrics 1875 — public domain worldwide."
-    },
-    "Let All Mortal Flesh Keep Silence": {
-      fullTitle: "Let All Mortal Flesh Keep Silence",
-      wordsBy: "Liturgy of St. James (4th c.), English trans. Gerard Moultrie (1864)",
-      year: "1864",
-      pdNote: "Ancient hymn from 4th century, English trans. 1864 — public domain globally."
-    },
-    "Toyland Song": {
-      fullTitle: "Toyland",
-      wordsBy: "Victor Herbert (music), Glen MacDonough (lyrics)",
-      year: 1903,
-      pdNote: "From 'Babes in Toyland' (1903). Copyright expired 1998 — public domain."
-    }
-    // === 38 BÀI CÒN LẠI SẼ ĐƯỢC THÊM TẠI ĐÂY ===
+    "Come Ye Lofty": { fullTitle: "Come Ye Lofty, Come Ye Lowly", wordsBy: "Traditional Breton carol, English trans. Richard R. Chope (1875)", year: "1875", pdNote: "Traditional Breton carol, English lyrics 1875 — public domain worldwide." },
+    "Let All Mortal Flesh Keep Silence": { fullTitle: "Let All Mortal Flesh Keep Silence", wordsBy: "Liturgy of St. James (4th c.), English trans. Gerard Moultrie (1864)", year: "1864", pdNote: "Ancient hymn from 4th century, English trans. 1864 — public domain globally." },
+    "Toyland Song": { fullTitle: "Toyland", wordsBy: "Victor Herbert (music), Glen MacDonough (lyrics)", year: "1903", pdNote: "From 'Babes in Toyland' (1903). Copyright expired 1998 — public domain." },
+    "Away in a Manger": { fullTitle: "Away in a Manger", wordsBy: "James R. Murray (1887)", year: "1887", pdNote: "Published in 1887 — public domain in the US and worldwide." },
+    "Deck the Halls": { fullTitle: "Deck the Halls", wordsBy: "Traditional Welsh melody (16th c.), English lyrics by Thomas Oliphant (1862)", year: "1862", pdNote: "Welsh folk tune from 16th century, lyrics 1862 — public domain." },
+    "God Rest Ye Merry Gentlemen": { fullTitle: "God Rest Ye Merry, Gentlemen", wordsBy: "Traditional English carol (16th c.)", year: "16th c.", pdNote: "Traditional English carol from the 16th century — public domain." },
+    "Hark! The Herald Angels Sing": { fullTitle: "Hark! The Herald Angels Sing", wordsBy: "Charles Wesley (1739), Felix Mendelssohn (1840)", year: "1739", pdNote: "Lyrics 1739, melody adapted 1840 — public domain worldwide." },
+    "Joy to the World": { fullTitle: "Joy to the World", wordsBy: "Isaac Watts (1719), Lowell Mason (1848)", year: "1719", pdNote: "Lyrics 1719, melody 1848 — public domain." },
+    "O Come, All Ye Faithful": { fullTitle: "O Come, All Ye Faithful (Adeste Fideles)", wordsBy: "John Francis Wade (1743), English trans. Frederick Oakeley (1841)", year: "1743", pdNote: "Latin hymn 1743, English 1841 — public domain." },
+    "O Holy Night": { fullTitle: "O Holy Night", wordsBy: "Placide Cappeau (1847), English trans. John S. Dwight (1855)", year: "1847", pdNote: "French carol 1847, English 1855 — public domain." },
+    "Silent Night": { fullTitle: "Silent Night", wordsBy: "Joseph Mohr (1818), Franz Xaver Gruber", year: "1818", pdNote: "Composed 1818 — public domain worldwide." },
+    "The First Noel": { fullTitle: "The First Noel", wordsBy: "Traditional English carol (17th c.)", year: "17th c.", pdNote: "Traditional English carol from 17th century — public domain." },
+    "We Wish You a Merry Christmas": { fullTitle: "We Wish You a Merry Christmas", wordsBy: "Traditional English carol (16th c.)", year: "16th c.", pdNote: "Traditional English folk song — public domain." },
+    "Angels Of The Realms Of Glory": { fullTitle: "Angels from the Realms of Glory", wordsBy: "James Montgomery (1816)", year: "1816", pdNote: "Published 1816 — public domain." },
+    "Auld Lang Syne": { fullTitle: "Auld Lang Syne", wordsBy: "Robert Burns (1788), Traditional Scottish tune", year: "1788", pdNote: "Scottish folk song, lyrics 1788 — public domain." },
+    "Go Tell It on the Mountain": { fullTitle: "Go Tell It on the Mountain", wordsBy: "John W. Work Jr. (1865)", year: "1865", pdNote: "African American spiritual, published 1865 — public domain." },
+    "Good Christian Men, Rejoice": { fullTitle: "Good Christian Men, Rejoice (In Dulci Jubilo)", wordsBy: "Heinrich Seuse (14th c.), English trans. John M. Neale (1853)", year: "14th c.", pdNote: "Medieval Latin hymn, English 1853 — public domain." },
+    "O Christmas Tree": { fullTitle: "O Christmas Tree (O Tannenbaum)", wordsBy: "Traditional German folk song (16th c.)", year: "16th c.", pdNote: "German folk song from 16th century — public domain." },
+    "O Come, O Come, Emmanuel": { fullTitle: "O Come, O Come, Emmanuel", wordsBy: "Latin hymn (12th c.), English trans. John M. Neale (1851)", year: "12th c.", pdNote: "Medieval Latin hymn, English 1851 — public domain." },
+    "O Little Town of Bethlehem": { fullTitle: "O Little Town of Bethlehem", wordsBy: "Phillips Brooks (1868)", year: "1868", pdNote: "Lyrics 1868 — public domain." },
+    "The Cherry Tree Carol": { fullTitle: "The Cherry Tree Carol", wordsBy: "Traditional English folk carol (15th c.)", year: "15th c.", pdNote: "English folk ballad from 15th century — public domain." },
+    "The Twelve Days Of Christmas": { fullTitle: "The Twelve Days of Christmas", wordsBy: "Traditional English carol (1780)", year: "1780", pdNote: "First published 1780 — public domain." },
+    "Angels We Have Heard On High": { fullTitle: "Angels We Have Heard on High", wordsBy: "Traditional French carol, English trans. James Chadwick (1862)", year: "1862", pdNote: "French carol, English 1862 — public domain." },
+    "Hark The Herald Angels Sing": { fullTitle: "Hark! The Herald Angels Sing", wordsBy: "Charles Wesley (1739)", year: "1739", pdNote: "Same as above — public domain." },
+    "In Dulci Jubilo": { fullTitle: "In Dulci Jubilo", wordsBy: "Heinrich Seuse (14th c.)", year: "14th c.", pdNote: "Medieval Latin hymn — public domain." },
+    "In The Bleak Midwinter": { fullTitle: "In the Bleak Midwinter", wordsBy: "Christina Rossetti (1872)", year: "1872", pdNote: "Poem 1872 — public domain." },
+    "It Came Upon The Midnight Clear": { fullTitle: "It Came Upon the Midnight Clear", wordsBy: "Edmund H. Sears (1849)", year: "1849", pdNote: "Published 1849 — public domain." },
+    "Jingle Bells": { fullTitle: "Jingle Bells", wordsBy: "James Lord Pierpont (1857)", year: "1857", pdNote: "Composed 1857 — public domain." },
+    "Jingle Bells ver2": { fullTitle: "Jingle Bells", wordsBy: "James Lord Pierpont (1857)", year: "1857", pdNote: "Same as above — public domain." },
+    "O Christmas Tree 1": { fullTitle: "O Christmas Tree", wordsBy: "Traditional German (16th c.)", year: "16th c.", pdNote: "Same as above — public domain." },
+    "Twelve Days off Christmas": { fullTitle: "The Twelve Days of Christmas", wordsBy: "Traditional (1780)", year: "1780", pdNote: "Same as above — public domain." },
+    "We wish you a merry christmas": { fullTitle: "We Wish You a Merry Christmas", wordsBy: "Traditional (16th c.)", year: "16th c.", pdNote: "Same as above — public domain." }
   };
 
-  // === DỮ LIỆU ÂM THANH – 41 BÀI ===
   const recordings = [
-    { song: "Come Ye Lofty", artist: "Alex C.", isrc: "VNKH12514280", date: 45961 },
-    { song: "Let All Mortal Flesh Keep Silence", artist: "Alex C.", isrc: "VNKH12514281", date: 45961 },
-    { song: "Toyland Song", artist: "Alex C.", isrc: "VNKH12514282", date: 45961 },
-    // === 38 BÀI MỚI SẼ ĐƯỢC THÊM TẠI ĐÂY ===
+    { song: "Come Ye Lofty", artist: "Alex C.", isrc: "VNKH12514280", date: "10/31/2025" },
+    { song: "Let All Mortal Flesh Keep Silence", artist: "Alex C.", isrc: "VNKH12514281", date: "10/31/2025" },
+    { song: "Toyland Song", artist: "Alex C.", isrc: "VNKH12514282", date: "10/31/2025" },
+    { song: "Away in a Manger", artist: "Alistair Hearth", isrc: "VNA1W2512001", date: "13/11/2025" },
+    { song: "Deck the Halls", artist: "Alistair Hearth", isrc: "VNA1W2512002", date: "13/11/2025" },
+    { song: "God Rest Ye Merry Gentlemen", artist: "Alistair Hearth", isrc: "VNA1W2512003", date: "13/11/2025" },
+    { song: "Hark! The Herald Angels Sing", artist: "Alistair Hearth", isrc: "VNA1W2512004", date: "13/11/2025" },
+    { song: "Joy to the World", artist: "Alistair Hearth", isrc: "VNA1W2512005", date: "13/11/2025" },
+    { song: "O Come, All Ye Faithful", artist: "Alistair Hearth", isrc: "VNA1W2512006", date: "13/11/2025" },
+    { song: "O Holy Night", artist: "Alistair Hearth", isrc: "VNA1W2512007", date: "13/11/2025" },
+    { song: "Silent Night", artist: "Alistair Hearth", isrc: "VNA1W2512008", date: "13/11/2025" },
+    { song: "The First Noel", artist: "Alistair Hearth", isrc: "VNA1W2512009", date: "13/11/2025" },
+    { song: "We Wish You a Merry Christmas", artist: "Alistair Hearth", isrc: "VNA1W2512010", date: "13/11/2025" },
+    { song: "Angels Of The Realms Of Glory", artist: "Alistair Hearth", isrc: "VNA1W2512011", date: "13/11/2025" },
+    { song: "Auld Lang Syne", artist: "Alistair Hearth", isrc: "VNA1W2512012", date: "13/11/2025" },
+    { song: "Go Tell It on the Mountain", artist: "Alistair Hearth", isrc: "VNA1W2512013", date: "13/11/2025" },
+    { song: "Good Christian Men, Rejoice", artist: "Alistair Hearth", isrc: "VNA1W2512014", date: "13/11/2025" },
+    { song: "O Christmas Tree", artist: "Alistair Hearth", isrc: "VNA1W2512015", date: "13/11/2025" },
+    { song: "O Come, O Come, Emmanuel", artist: "Alistair Hearth", isrc: "VNA1W2512016", date: "13/11/2025" },
+    { song: "O Little Town of Bethlehem", artist: "Alistair Hearth", isrc: "VNA1W2512017", date: "13/11/2025" },
+    { song: "The Cherry Tree Carol", artist: "Alistair Hearth", isrc: "VNA1W2512018", date: "13/11/2025" },
+    { song: "The Twelve Days Of Christmas", artist: "Alistair Hearth", isrc: "VNA1W2512019", date: "13/11/2025" },
+    { song: "Angels Of The Realms Of Glory", artist: "Alex C.", isrc: "VNA1W2100090", date: 44327 },
+    { song: "Angels We Have Heard On High", artist: "Alex C.", isrc: "VNA1W2412032", date: 45632 },
+    { song: "Auld Lang Syne", artist: "Alex C.", isrc: "VNA1W2100084", date: 44327 },
+    { song: "Hark The Herald Angels Sing", artist: "Alex C.", isrc: "VNA1W2100085", date: 44327 },
+    { song: "In Dulci Jubilo", artist: "Alex C.", isrc: "VNA1W2100101", date: 44547 },
+    { song: "In The Bleak Midwinter", artist: "Alex C.", isrc: "VNA1W2100086", date: 44327 },
+    { song: "It Came Upon The Midnight Clear", artist: "Alex C.", isrc: "VNA1W2100073", date: 44327 },
+    { song: "Jingle Bells ver2", artist: "Alex C.", isrc: "VNA1W2412036", date: 44536 },
+    { song: "Jingle Bells", artist: "Alex C.", isrc: "VNA1W2100065", date: 44327 },
+    { song: "Joy to the World", artist: "Alex C.", isrc: "VNA1W2100071", date: 44327 },
+    { song: "O Christmas Tree 1", artist: "Alex C.", isrc: "VNA1W2412031", date: 45632 },
+    { song: "O Christmas Tree", artist: "Alex C.", isrc: "VNA1W2100076", date: 44327 },
+    { song: "O Come All Ye Faithful", artist: "Alex C.", isrc: "VNA1W2100089", date: 44327 },
+    { song: "O Holy NIGHT", artist: "Alex C.", isrc: "VNA1W2100068", date: 44327 },
+    { song: "O Little Town of Bethlehem", artist: "Alex C.", isrc: "VNA1W2100088", date: 44328 },
+    { song: "Silent Night", artist: "Alex C.", isrc: "VNA1W2100064", date: 44329 },
+    { song: "The first Noel", artist: "Alex C.", isrc: "VNA1W2100072", date: 44330 },
+    { song: "Twelve Days off Christmas", artist: "Alex C.", isrc: "VNA1W2100077", date: 44331 },
+    { song: "We wish you a merry christmas", artist: "Alex C.", isrc: "VNA1W2100069", date: 44332 }
   ];
 
-  // === TỰ ĐỘNG TẠO DROPDOWN ===
+  // === TỰ ĐỘNG GỢI Ý BÀI HÁT ===
   const songList = document.getElementById("songList");
-  const artistSelect = document.getElementById("artistSelect");
-  const artistInfo = document.getElementById("artistInfo");
-
-  Object.keys(pdSongs).forEach(title => {
+  Object.keys(pdSongs).sort().forEach(title => {
     const opt = document.createElement("option");
     opt.value = title;
     songList.appendChild(opt);
   });
 
-  const artists = [...new Set(recordings.map(r => r.artist))];
-  artists.forEach(art => {
-    const opt = document.createElement("option");
-    opt.value = art;
-    opt.textContent = art;
-    artistSelect.appendChild(opt);
-  });
-
-  artistSelect.addEventListener("change", () => {
-    const art = artistSelect.value;
-    if (art) {
-      const count = recordings.filter(r => r.artist === art).length;
-      artistInfo.textContent = `${art} có ${count}/41 bản cover (Warner Music)`;
+  // === CẬP NHẬT THÔNG TIN NGHỆ SĨ ===
+  function updateArtistInfo() {
+    const artist = document.getElementById("artistSelect").value;
+    const info = document.getElementById("artistInfo");
+    if (artist) {
+      const count = recordings.filter(r => r.artist === artist).length;
+      info.textContent = `${artist} có ${count} bản cover (Warner Music)`;
     } else {
-      artistInfo.textContent = "";
+      info.textContent = "";
     }
-  });
+  }
 
-  // Format ngày
-  function formatDate(serial) {
-    if (!serial) return "N/A";
-    const date = new Date((serial - 25569) * 86400 * 1000);
-    const d = String(date.getUTCDate()).padStart(2, '0');
-    const m = String(date.getUTCMonth() + 1).padStart(2, '0');
-    const y = date.getUTCFullYear();
-    return `${d}/${m}/${y}`;
+  // === FORMAT NGÀY ===
+  function formatDate(input) {
+    if (!input) return "N/A";
+    if (typeof input === "number") {
+      const date = new Date((input - 25569) * 86400 * 1000);
+      return `${String(date.getUTCDate()).padStart(2,'0')}/${String(date.getUTCMonth()+1).padStart(2,'0')}/${date.getUTCFullYear()}`;
+    }
+    return input;
   }
 
   // === TẠO NỘI DUNG ===
   function generateDispute() {
-    const song = document.getElementById("songTitle").value.trim();
+    const songInput = document.getElementById("songInput").value.trim();
     const artist = document.getElementById("artistSelect").value;
     const resultDiv = document.getElementById("result");
 
-    if (!song || !artist) {
-      resultDiv.innerHTML = `<p class="error">Vui lòng chọn cả bài hát và nghệ sĩ!</p>`;
+    if (!songInput || !artist) {
+      resultDiv.innerHTML = `<p class="error">Vui lòng nhập tên bài hát và chọn nghệ sĩ!</p>`;
       return;
     }
 
-    const pd = pdSongs[song];
+    const pd = pdSongs[songInput];
     if (!pd) {
-      resultDiv.innerHTML = `<p class="error">Không có dữ liệu PD cho: <strong>${song}</strong></p>`;
+      resultDiv.innerHTML = `<p class="error">Không tìm thấy thông tin Public Domain cho: <strong>${songInput}</strong><br>Hãy kiểm tra chính tả hoặc thêm vào danh sách.</p>`;
       return;
     }
 
-    const rec = recordings.find(r => r.song === song && r.artist === artist);
+    const rec = recordings.find(r => r.song === songInput && r.artist === artist);
     if (!rec) {
-      resultDiv.innerHTML = `<p class="error">Không có bản cover <strong>${song}</strong> của <strong>${artist}</strong>!</p>`;
+      resultDiv.innerHTML = `<p class="error">Không có bản cover <strong>${songInput}</strong> của <strong>${artist}</strong>!</p>`;
       return;
     }
 
@@ -174,12 +293,12 @@ Distributor: Warner Music
 This Content ID Claim is erroneous because it targets the Melody which is demonstrably in the Public Domain. The Claimant can only own the copyright to their specific Sound Recording or a unique Arrangement, but they cannot exclusively claim the original Public Domain melody.
 We request the Claimant verify and release the Claim immediately. If the Claim is upheld, we will proceed with submitting a legal Appeal and prepare the necessary procedures for a court dispute to protect the lawful rights of our Sound Recording.
 
-Signed: Ngo Van Dat`;
+;
 
     resultDiv.innerHTML = `
       <div class="output">${content}</div>
       <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
-      <p class="success">Tạo thành công! Dán vào YouTube → Ký tên: Ngo Van Dat</p>
+      <p class="success">Tạo thành công! Dán vào YouTube</p>
     `;
 
     window.lastContent = content;
