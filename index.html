@@ -22,6 +22,7 @@
     .error { color: #c62828; font-weight: bold; text-align: center; }
     .info { font-size: 14px; color: #666; margin-top: 5px; text-align: center; }
     .wm-logo { text-align: center; margin: 15px 0; font-weight: bold; color: #d32f2f; }
+    .guide { background: #e3f2fd; padding: 15px; border-radius: 10px; margin: 20px 0; font-size: 15px; line-height: 1.6; border-left: 5px solid #1976d2; }
   </style>
 </head>
 <body>
@@ -43,11 +44,19 @@
 
   <button onclick="generateDispute()">TẠO NỘI DUNG TRANH CHẤP</button>
 
+  <div class="guide">
+    <strong>HƯỚNG DẪN DÁN VÀO YOUTUBE:</strong><br>
+    1. Vào YouTube Studio → Content → Video bị claim<br>
+    2. Chọn <strong>Kháng Nghị</strong> → Chọn <strong>"Phạm Vi Thuộc Miền Cộng Đồng"</strong><br>
+    3. <strong>Paste đoạn kháng nghị bên dưới vào ô</strong><br>
+    4. Ký tên: <strong>Ngo Van Dat</strong> (đã tự động thêm)
+  </div>
+
   <div id="result"></div>
 </div>
 
 <script>
-  // === PUBLIC DOMAIN DATA (có thể mở rộng đến 41 bài) ===
+  // === PUBLIC DOMAIN DATA (41 bài – 3 có, 38 placeholder) ===
   const pdSongs = {
     "Come Ye Lofty": {
       fullTitle: "Come Ye Lofty, Come Ye Lowly",
@@ -67,31 +76,28 @@
       year: 1903,
       pdNote: "From 'Babes in Toyland' (1903). Copyright expired 1998 — public domain."
     }
-    // SẼ THÊM 38 BÀI KHÁC KHI BẠN GỬI
+    // === 38 BÀI CÒN LẠI SẼ ĐƯỢC THÊM TẠI ĐÂY ===
   };
 
-  // === DỮ LIỆU ÂM THANH – 41 BÀI (hiện có 3, chờ bạn gửi 38) ===
+  // === DỮ LIỆU ÂM THANH – 41 BÀI ===
   const recordings = [
     { song: "Come Ye Lofty", artist: "Alex C.", isrc: "VNKH12514280", date: 45961 },
     { song: "Let All Mortal Flesh Keep Silence", artist: "Alex C.", isrc: "VNKH12514281", date: 45961 },
     { song: "Toyland Song", artist: "Alex C.", isrc: "VNKH12514282", date: 45961 },
-    // SẼ THÊM 38 BÀI MỚI Ở ĐÂY
+    // === 38 BÀI MỚI SẼ ĐƯỢC THÊM TẠI ĐÂY ===
   ];
 
   // === TỰ ĐỘNG TẠO DROPDOWN ===
-  const songInput = document.getElementById("songTitle");
   const songList = document.getElementById("songList");
   const artistSelect = document.getElementById("artistSelect");
   const artistInfo = document.getElementById("artistInfo");
 
-  // Điền danh sách bài hát
   Object.keys(pdSongs).forEach(title => {
     const opt = document.createElement("option");
     opt.value = title;
     songList.appendChild(opt);
   });
 
-  // Điền nghệ sĩ
   const artists = [...new Set(recordings.map(r => r.artist))];
   artists.forEach(art => {
     const opt = document.createElement("option");
@@ -100,12 +106,11 @@
     artistSelect.appendChild(opt);
   });
 
-  // Cập nhật thông tin nghệ sĩ
   artistSelect.addEventListener("change", () => {
     const art = artistSelect.value;
     if (art) {
       const count = recordings.filter(r => r.artist === art).length;
-      artistInfo.textContent = `${art} có ${count} bản cover (Warner Music)`;
+      artistInfo.textContent = `${art} có ${count}/41 bản cover (Warner Music)`;
     } else {
       artistInfo.textContent = "";
     }
@@ -167,18 +172,20 @@ Distributor: Warner Music
 
 3. DISPUTE AND REQUEST:
 This Content ID Claim is erroneous because it targets the Melody which is demonstrably in the Public Domain. The Claimant can only own the copyright to their specific Sound Recording or a unique Arrangement, but they cannot exclusively claim the original Public Domain melody.
-We request the Claimant verify and release the Claim immediately. If the Claim is upheld, we will proceed with submitting a legal Appeal and prepare the necessary procedures for a court dispute to protect the lawful rights of our Sound Recording.`;
+We request the Claimant verify and release the Claim immediately. If the Claim is upheld, we will proceed with submitting a legal Appeal and prepare the necessary procedures for a court dispute to protect the lawful rights of our Sound Recording.
+
+Signed: Ngo Van Dat`;
 
     resultDiv.innerHTML = `
       <div class="output">${content}</div>
       <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
-      <p class="success">Tạo thành công! Dán vào YouTube.</p>
+      <p class="success">Tạo thành công! Dán vào YouTube → Ký tên: Ngo Van Dat</p>
     `;
 
     window.lastContent = content;
   }
 
-  // === COPY TO CLIPBOARD (HOẠT ĐỘNG 100%) ===
+  // === COPY TO CLIPBOARD ===
   function copyToClipboard() {
     const textarea = document.createElement("textarea");
     textarea.value = window.lastContent;
