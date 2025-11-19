@@ -227,31 +227,78 @@
     return input;
   }
 
-  // === TẠO NỘI DUNG (ĐÃ BỎ SIGNED) ===
+// HÀM TÌM SIÊU THÔNG MINH – CHỈ CHẠY KHI BẤM NÚT TẠO
+  function smartFindSong(input) {
+    if (!input) return null;
+    const s = input.trim().toLowerCase().replace(/[.,!?'"’]/g, '').replace(/\s+/g, ' ');
+
+    // 1. Khớp chính xác
+    for (const key in pdSongs) {
+      if (key.toLowerCase() === s) return key;
+    }
+
+    // 2. Từ khóa mạnh (ưu tiên các bài nổi tiếng)
+    const strongKeywords = {
+      "silent night": "Silent Night",
+      "jingle bells": "Jingle Bells",
+      "o holy night": "O Holy Night",
+      "we wish you": "We Wish You a Merry Christmas",
+      "hark the herald": "Hark! The Herald Angels Sing",
+      "joy to the world": "Joy to the World",
+      "o come all ye": "O Come, All Ye Faithful",
+      "deck the halls": "Deck the Halls",
+      "first noel": "The First Noel"
+    };
+    if (strongKeywords[s]) return strongKeywords[s];
+
+    // 3. Tìm theo từ khóa (ít nhất 60% từ khớp)
+    const words = s.split(' ').filter(w => w.length > 2);
+    if (words.length === 0) return null;
+
+    let best = null;
+    let bestScore = 0;
+
+    for (const key in pdSongs) {
+      const cleanKey = key.toLowerCase().replace(/[.,!?'"’]/g, '');
+      let score = 0;
+      for (const w of words) {
+        if (cleanKey.includes(w)) score++;
+      }
+      if (score > bestScore || (score === bestScore && key.length < (best?.length || 999))) {
+        bestScore = score;
+        best = key;
+      }
+    }
+
+    return (bestScore >= Math.max(2, words.length * 0.6)) ? best : null;
+  }
+
+  // TẠO NỘI DUNG – DÙNG HÀM THÔNG MINH
   function generateDispute() {
-    const songInput = document.getElementById("songInput").value.trim();
+    const raw =  document.getElementById("songInput").value;
     const artist = document.getElementById("artistSelect").value;
     const resultDiv = document.getElementById("result");
 
-    if (!songInput || !artist) {
+    if (!raw || !artist) {
       resultDiv.innerHTML = `<p class="error">Vui lòng nhập tên bài hát và chọn nghệ sĩ!</p>`;
       return;
     }
 
-    const pd = pdSongs[songInput];
-    if (!pd) {
-      resultDiv.innerHTML = `<p class="error">Không tìm thấy thông tin Public Domain cho: <strong>${songInput}</strong></p>`;
+    const songKey = smartFindSong(raw);
+    if (!songKey) {
+      resultDiv.innerHTML = `<p class="error">Không tìm được bài hát nào phù hợp với:<br><strong>“${raw}”</strong></p>`;
       return;
     }
 
-    const rec = recordings.find(r => r.song === songInput && r.artist === artist);
+    const pd = pdSongs[songKey];
+    const rec = recordings.find(r => r.song === songKey && r.artist === artist);
+
     if (!rec) {
-      resultDiv.innerHTML = `<p class="error">Không có bản cover <strong>${songInput}</strong> của <strong>${artist}</strong>!</p>`;
+      resultDiv.innerHTML = `<p class="error">Không có bản cover <strong>${songKey}</strong> của <strong>${artist}</strong>!</p>`;
       return;
     }
 
     const releaseDate = formatDate(rec.date);
-
     const content = `CONTENT ID DISPUTE RATIONALE
 
 PART A: ENGLISH VERSION (For Protests on YouTube)
