@@ -116,111 +116,108 @@
   }
   setInterval(createSnowflake, 300);
 
-  // === DỮ LIỆU ===
+   // === DATA CHUẨN 100% THEO FILE EXCEL CUỐI CÙNG ===
   const pdSongs = {
-    "Come Ye Lofty": { fullTitle: "Come Ye Lofty, Come Ye Lowly", wordsBy: "Traditional Breton carol, English trans. Richard R. Chope (1875)", year: "1875", pdNote: "Traditional Breton carol, English lyrics 1875 — public domain worldwide." },
-    "Let All Mortal Flesh Keep Silence": { fullTitle: "Let All Mortal Flesh Keep Silence", wordsBy: "Liturgy of St. James (4th c.), English trans. Gerard Moultrie (1864)", year: "1864", pdNote: "Ancient hymn from 4th century, English trans. 1864 — public domain globally." },
-    "Toyland Song": { fullTitle: "Toyland", wordsBy: "Victor Herbert (music), Glen MacDonough (lyrics)", year: "1903", pdNote: "From 'Babes in Toyland' (1903). Copyright expired 1998 — public domain." },
-    "Away in a Manger": { fullTitle: "Away in a Manger", wordsBy: "James R. Murray (1887)", year: "1887", pdNote: "Published in 1887 — public domain in the US and worldwide." },
-    "Deck the Halls": { fullTitle: "Deck the Halls", wordsBy: "Traditional Welsh melody (16th c.), English lyrics by Thomas Oliphant (1862)", year: "1862", pdNote: "Welsh folk tune from 16th century, lyrics 1862 — public domain." },
-    "God Rest Ye Merry Gentlemen": { fullTitle: "God Rest Ye Merry, Gentlemen", wordsBy: "Traditional English carol (16th c.)", year: "16th c.", pdNote: "Traditional English carol from the 16th century — public domain." },
-    "Hark! The Herald Angels Sing": { fullTitle: "Hark! The Herald Angels Sing", wordsBy: "Charles Wesley (1739), Felix Mendelssohn (1840)", year: "1739", pdNote: "Lyrics 1739, melody adapted 1840 — public domain worldwide." },
-    "Joy to the World": { fullTitle: "Joy to the World", wordsBy: "Isaac Watts (1719), Lowell Mason (1848)", year: "1719", pdNote: "Lyrics 1719, melody 1848 — public domain." },
-    "O Come, All Ye Faithful": { fullTitle: "O Come, All Ye Faithful (Adeste Fideles)", wordsBy: "John Francis Wade (1743), English trans. Frederick Oakeley (1841)", year: "1743", pdNote: "Latin hymn 1743, English 1841 — public domain." },
-    "O Holy Night": { fullTitle: "O Holy Night", wordsBy: "Placide Cappeau (1847), English trans. John S. Dwight (1855)", year: "1847", pdNote: "French carol 1847, English 1855 — public domain." },
-    "Silent Night": { fullTitle: "Silent Night", wordsBy: "Joseph Mohr (1818), Franz Xaver Gruber", year: "1818", pdNote: "Composed 1818 — public domain worldwide." },
-    "The First Noel": { fullTitle: "The First Noel", wordsBy: "Traditional English carol (17th c.)", year: "17th c.", pdNote: "Traditional English carol from 17th century — public domain." },
-    "We Wish You a Merry Christmas": { fullTitle: "We Wish You a Merry Christmas", wordsBy: "Traditional English carol (16th c.)", year: "16th c.", pdNote: "Traditional English folk song — public domain." },
-    "Angels Of The Realms Of Glory": { fullTitle: "Angels from the Realms of Glory", wordsBy: "James Montgomery (1816)", year: "1816", pdNote: "Published 1816 — public domain." },
-    "Auld Lang Syne": { fullTitle: "Auld Lang Syne", wordsBy: "Robert Burns (1788), Traditional Scottish tune", year: "1788", pdNote: "Scottish folk song, lyrics 1788 — public domain." },
-    "Go Tell It on the Mountain": { fullTitle: "Go Tell It on the Mountain", wordsBy: "John W. Work Jr. (1865)", year: "1865", pdNote: "African American spiritual, published 1865 — public domain." },
-    "Good Christian Men, Rejoice": { fullTitle: "Good Christian Men, Rejoice (In Dulci Jubilo)", wordsBy: "Heinrich Seuse (14th c.), English trans. John M. Neale (1853)", year: "14th c.", pdNote: "Medieval Latin hymn, English 1853 — public domain." },
-    "O Christmas Tree": { fullTitle: "O Christmas Tree (O Tannenbaum)", wordsBy: "Traditional German folk song (16th c.)", year: "16th c.", pdNote: "German folk song from 16th century — public domain." },
-    "O Come, O Come, Emmanuel": { fullTitle: "O Come, O Come, Emmanuel", wordsBy: "Latin hymn (12th c.), English trans. John M. Neale (1851)", year: "12th c.", pdNote: "Medieval Latin hymn, English 1851 — public domain." },
-    "O Little Town of Bethlehem": { fullTitle: "O Little Town of Bethlehem", wordsBy: "Phillips Brooks (1868)", year: "1868", pdNote: "Lyrics 1868 — public domain." },
-    "The Cherry Tree Carol": { fullTitle: "The Cherry Tree Carol", wordsBy: "Traditional English folk carol (15th c.)", year: "15th c.", pdNote: "English folk ballad from 15th century — public domain." },
-    "The Twelve Days Of Christmas": { fullTitle: "The Twelve Days of Christmas", wordsBy: "Traditional English carol (1780)", year: "1780", pdNote: "First published 1780 — public domain." },
-    "Angels We Have Heard On High": { fullTitle: "Angels We Have Heard on High", wordsBy: "Traditional French carol, English trans. James Chadwick (1862)", year: "1862", pdNote: "French carol, English 1862 — public domain." },
-    "Hark The Herald Angels Sing": { fullTitle: "Hark! The Herald Angels Sing", wordsBy: "Charles Wesley (1739)", year: "1739", pdNote: "Same as above — public domain." },
-    "In Dulci Jubilo": { fullTitle: "In Dulci Jubilo", wordsBy: "Heinrich Seuse (14th c.)", year: "14th c.", pdNote: "Medieval Latin hymn — public domain." },
-    "In The Bleak Midwinter": { fullTitle: "In the Bleak Midwinter", wordsBy: "Christina Rossetti (1872)", year: "1872", pdNote: "Poem 1872 — public domain." },
-    "It Came Upon The Midnight Clear": { fullTitle: "It Came Upon the Midnight Clear", wordsBy: "Edmund H. Sears (1849)", year: "1849", pdNote: "Published 1849 — public domain." },
-    "Jingle Bells": { fullTitle: "Jingle Bells", wordsBy: "James Lord Pierpont (1857)", year: "1857", pdNote: "Composed 1857 — public domain." },
-    "Jingle Bells ver2": { fullTitle: "Jingle Bells", wordsBy: "James Lord Pierpont (1857)", year: "1857", pdNote: "Same as above — public domain." },
-    "O Christmas Tree 1": { fullTitle: "O Christmas Tree", wordsBy: "Traditional German (16th c.)", year: "16th c.", pdNote: "Same as above — public domain." },
-    "Twelve Days off Christmas": { fullTitle: "The Twelve Days of Christmas", wordsBy: "Traditional (1780)", year: "1780", pdNote: "Same as above — public domain." },
-    "Angels From The Realms Of Glory": { fullTitle: "Angels from the Realms of Glory", wordsBy: "James Montgomery (1816)", year: "1816", pdNote: "Published 1816 — public domain worldwide." },
-    "As With Gladness Men Of Old": { fullTitle: "As with Gladness Men of Old", wordsBy: "William C. Dix (1860)", year: "1860", pdNote: "Published 1860 — public domain worldwide." },
-    "Auld Lang Syn": { fullTitle: "Auld Lang Syne", wordsBy: "Robert Burns (1788)", year: "1788", pdNote: "Traditional Scottish — public domain." },
-    "Coventry Carol": { fullTitle: "Coventry Carol", wordsBy: "Traditional English (16th c.)", year: "16th c.", pdNote: "English carol from 16th century — public domain." },
-    "Good King Wenceslas": { fullTitle: "Good King Wenceslas", wordsBy: "John M. Neale (1853)", year: "1853", pdNote: "Published 1853 — public domain." },
-    "I Heard The Bells On Christmas Day": { fullTitle: "I Heard the Bells on Christmas Day", wordsBy: "Henry Wadsworth Longfellow (1863)", year: "1863", pdNote: "Poem 1863 — public domain." },
-    "Infant Holy, Infant Lowly": { fullTitle: "Infant Holy, Infant Lowly", wordsBy: "Traditional Polish carol, English trans. Edith M. G. Reed (1921)", year: "1921", pdNote: "Traditional Polish — public domain." },
-    "Jolly Old Saint Nicholas": { fullTitle: "Jolly Old Saint Nicholas", wordsBy: "Traditional American (19th c.)", year: "19th c.", pdNote: "Traditional American folk song — public domain." },
-    "Sussex Carol": { fullTitle: "Sussex Carol (On Christmas Night)", wordsBy: "Traditional English", year: "17th c.", pdNote: "Traditional English carol — public domain." },
-    "The Boar’s Head Carol": { fullTitle: "The Boar’s Head Carol", wordsBy: "Traditional English (15th c.)", year: "15th c.", pdNote: "Traditional English — public domain." },
-    "The Holly And The Ivy": { fullTitle: "The Holly and the Ivy", wordsBy: "Traditional English carol", year: "17th c.", pdNote: "Traditional English — public domain." },
-    "Ding Dong Merrily On High": { fullTitle: "Ding Dong Merrily on High", wordsBy: "George R. Woodward (1924), melody 16th c.", year: "16th c.", pdNote: "Traditional French melody — public domain." },
-    "We wish you a merry christmas": { fullTitle: "We Wish You a Merry Christmas", wordsBy: "Traditional (16th c.)", year: "16th c.", pdNote: "Same as above — public domain." },
-    "The Cherry Tree Carol": { fullTitle: "The Cherry Tree Carol", wordsBy: "Traditional English folk carol (15th–18th c.)", year: "15th c.", pdNote: "Traditional English folk ballad, first printed 1820s — public domain worldwide." },
+    "Angels From The Realms Of Glory": { fullTitle: "Angels from the Realms of Glory", wordsBy: "James Montgomery (1816)", year: "1816", pdNote: "Composed in 1816 by James Montgomery. First published in 1816. Entered the public domain worldwide before 1928." },
+    "As With Gladness Men Of Old": { fullTitle: "As with Gladness Men of Old", wordsBy: "William C. Dix (1860)", year: "1860", pdNote: "Lyrics written in 1860 by William C. Dix. Melody from Conrad Kocher (1838). Public domain worldwide." },
+    "Auld Lang Syn": { fullTitle: "Auld Lang Syne", wordsBy: "Robert Burns (1788)", year: "1788", pdNote: "Traditional Scottish melody with lyrics by Robert Burns published in 1788. Public domain worldwide." },
+    "Coventry Carol": { fullTitle: "Coventry Carol", wordsBy: "Traditional English (16th century)", year: "16th c.", pdNote: "Traditional English carol from the 16th century, first printed in 1591. Public domain worldwide." },
+    "Good Christian Men, Rejoice": { fullTitle: "Good Christian Men, Rejoice (In Dulci Jubilo)", wordsBy: "Heinrich Seuse (14th c.), English trans. John M. Neale (1853)", year: "14th c.", pdNote: "Medieval Latin hymn from the 14th century. English translation 1853. Public domain worldwide." },
+    "Good King Wenceslas": { fullTitle: "Good King Wenceslas", wordsBy: "John M. Neale (1853)", year: "1853", pdNote: "Lyrics by John M. Neale published in 1853 set to a 13th-century tune. Public domain worldwide." },
+    "I Heard The Bells On Christmas Day": { fullTitle: "I Heard the Bells on Christmas Day", wordsBy: "Henry Wadsworth Longfellow (1863)", year: "1863", pdNote: "Poem by Longfellow in 1863, set to music by Jean Baptiste Calkin in 1872. Public domain worldwide." },
+    "Infant Holy, Infant Lowly": { fullTitle: "Infant Holy, Infant Lowly", wordsBy: "Traditional Polish carol, English trans. Edith M. G. Reed (1921)", year: "1921", pdNote: "Traditional Polish carol, English translation published 1921. Public domain worldwide." },
+    "Jolly Old Saint Nicholas": { fullTitle: "Jolly Old Saint Nicholas", wordsBy: "Traditional American (19th century)", year: "19th c.", pdNote: "Traditional American Christmas song from the 19th century. Public domain worldwide." },
+    "O Christmas Tree": { fullTitle: "O Christmas Tree (O Tannenbaum)", wordsBy: "Traditional German folk song (16th century)", year: "16th c.", pdNote: "Traditional German folk song dating back to the 16th century. Public domain worldwide." },
+    "O Come, O Come, Emmanuel": { fullTitle: "O Come, O Come, Emmanuel", wordsBy: "Latin hymn (12th c.), English trans. John M. Neale (1851)", year: "12th c.", pdNote: "Medieval Latin hymn from the 12th century. English translation 1851. Public domain worldwide." },
+    "O Little Town Of Bethlehem": { fullTitle: "O Little Town of Bethlehem", wordsBy: "Phillips Brooks (1868)", year: "1868", pdNote: "Lyrics written in 1868 by Phillips Brooks. Melody by Lewis Redner. Public domain worldwide." },
+    "Sussex Carol": { fullTitle: "Sussex Carol (On Christmas Night)", wordsBy: "Traditional English carol", year: "17th c.", pdNote: "Traditional English carol collected in Sussex. Public domain worldwide." },
+    "The Boar’s Head Carol": { fullTitle: "The Boar’s Head Carol", wordsBy: "Traditional English (15th century)", year: "15th c.", pdNote: "Traditional English carol from the 15th century. Public domain worldwide." },
+    "The Holly And The Ivy": { fullTitle: "The Holly and the Ivy", wordsBy: "Traditional English carol", year: "17th c.", pdNote: "Traditional English folk carol from the 17th century. Public domain worldwide." },
+    "The Twelve Days Of Christmas": { fullTitle: "The Twelve Days of Christmas", wordsBy: "Traditional English (1780)", year: "1780", pdNote: "First published in 1780. Traditional English cumulative song. Public domain worldwide." },
+    "Ding Dong Merrily On High": { fullTitle: "Ding Dong Merrily on High", wordsBy: "George R. Woodward (1924), melody 16th c.", year: "16th c.", pdNote: "Traditional French melody from the 16th century. Lyrics by Woodward 1924. Melody is public domain worldwide." },
+    "Go Tell It On The Mountain": { fullTitle: "Go Tell It on the Mountain", wordsBy: "John W. Work Jr. (1865)", year: "1865", pdNote: "African American spiritual, first published 1865. Public domain worldwide." },
+    "In The Bleak Midwinter": { fullTitle: "In the Bleak Midwinter", wordsBy: "Christina Rossetti (1872)", year: "1872", pdNote: "Poem by Christina Rossetti published in 1872. Music by Gustav Holst (1906). Public domain worldwide." },
+    "Away in a Manger": { fullTitle: "Away in a Manger", wordsBy: "Anonymous (1885), music by James R. Murray (1887)", year: "1887", pdNote: "First published in 1885, music 1887. Public domain worldwide." },
+    "Deck the Halls": { fullTitle: "Deck the Halls", wordsBy: "Traditional Welsh melody (16th c.), English lyrics by Thomas Oliphant (1862)", year: "1862", pdNote: "Traditional Welsh tune from the 16th century. English lyrics 1862. Public domain worldwide." },
+    "God Rest Ye Merry Gentlemen": { fullTitle: "God Rest Ye Merry, Gentlemen", wordsBy: "Traditional English carol (16th century)", year: "16th c.", pdNote: "Traditional English carol dating back to the 16th century. Public domain worldwide." },
+    "Hark! The Herald Angels Sing": { fullTitle: "Hark! The Herald Angels Sing", wordsBy: "Charles Wesley (1739), music by Felix Mendelssohn (1840)", year: "1739", pdNote: "Lyrics by Charles Wesley in 1739. Melody adapted from Mendelssohn in 1840. Public domain worldwide." },
+    "Joy to the World": { fullTitle: "Joy to the World", wordsBy: "Isaac Watts (1719), music by Lowell Mason (1848)", year: "1719", pdNote: "Lyrics by Isaac Watts in 1719. Melody arranged by Lowell Mason in 1848. Public domain worldwide." },
+    "O Come, All Ye Faithful": { fullTitle: "O Come, All Ye Faithful (Adeste Fideles)", wordsBy: "John Francis Wade (1743), English trans. Frederick Oakeley (1841)", year: "1743", pdNote: "Latin hymn from 1743. English translation 1841. Public domain worldwide." },
+    "O Holy Night": { fullTitle: "O Holy Night", wordsBy: "Placide Cappeau (1847), music by Adolphe Adam", year: "1847", pdNote: "French carol written in 1847. English translation by John Sullivan Dwight (1855). Public domain worldwide." },
+    "Silent Night": { fullTitle: "Silent Night", wordsBy: "Joseph Mohr (1818), music by Franz Xaver Gruber", year: "1818", pdNote: "Composed in 1818 by Joseph Mohr and Franz Xaver Gruber. Public domain worldwide." },
+    "The First Noel": { fullTitle: "The First Noel", wordsBy: "Traditional English carol (17th century)", year: "17th c.", pdNote: "Traditional English carol from the 17th century. Public domain worldwide." },
+    "We Wish You a Merry Christmas": { fullTitle: "We Wish You a Merry Christmas", wordsBy: "Traditional English (16th century)", year: "16th c.", pdNote: "Traditional English folk carol from the 16th century. Public domain worldwide." },
+    "Come Ye Lofty": { fullTitle: "Come Ye Lofty, Come Ye Lowly", wordsBy: "Traditional Breton carol", year: "19th c.", pdNote: "Traditional Breton Christmas carol. Public domain worldwide." },
+    "Let All Mortal Flesh Keep Silence": { fullTitle: "Let All Mortal Flesh Keep Silence", wordsBy: "Liturgy of St. James (4th century)", year: "4th c.", pdNote: "Ancient hymn from the 4th century Liturgy of St. James. Public domain worldwide." },
+    "Toyland Song": { fullTitle: "Toyland", wordsBy: "Victor Herbert (1903)", year: "1903", pdNote: "From the operetta 'Babes in Toyland' (1903). Copyright expired — public domain worldwide." },
+    "Angels Of The Realms Of Glory": { fullTitle: "Angels from the Realms of Glory", wordsBy: "James Montgomery (1816)", year: "1816", pdNote: "Composed in 1816 by James Montgomery. Public domain worldwide." },
+    "Angels We Have Heard On High": { fullTitle: "Angels We Have Heard on High", wordsBy: "Traditional French carol", year: "18th c.", pdNote: "Traditional French carol 'Les Anges dans nos campagnes'. Public domain worldwide." },
+    "Auld Lang Syne": { fullTitle: "Auld Lang Syne", wordsBy: "Robert Burns (1788)", year: "1788", pdNote: "Traditional Scottish tune with lyrics by Robert Burns. Public domain worldwide." },
+    "Hark The Herald Angels Sing": { fullTitle: "Hark! The Herald Angels Sing", wordsBy: "Charles Wesley (1739)", year: "1739", pdNote: "Lyrics by Charles Wesley in 1739. Melody adapted from Mendelssohn. Public domain worldwide." },
+    "In Dulci Jubilo": { fullTitle: "In Dulci Jubilo", wordsBy: "14th century Latin-German macaronic hymn", year: "14th c.", pdNote: "Medieval Latin-German hymn from the 14th century. Public domain worldwide." },
+    "It Came Upon The Midnight Clear": { fullTitle: "It Came Upon the Midnight Clear", wordsBy: "Edmund H. Sears (1849)", year: "1849", pdNote: "Lyrics by Edmund Sears in 1849. Music by Richard Storrs Willis. Public domain worldwide." },
+    "Jingle Bells ver2": { fullTitle: "Jingle Bells", wordsBy: "James Lord Pierpont (1857)", year: "1857", pdNote: "Composed in 1857 by James Lord Pierpont. Public domain worldwide." },
+    "Jingle Bells": { fullTitle: "Jingle Bells", wordsBy: "James Lord Pierpont (1857)", year: "1857", pdNote: "Composed in 1857 by James Lord Pierpont. Public domain worldwide." },
+    "O Christmas Tree 1": { fullTitle: "O Christmas Tree (O Tannenbaum)", wordsBy: "Traditional German (16th century)", year: "16th c.", pdNote: "Traditional German folk song from the 16th century. Public domain worldwide." },
+    "Twelve Days off Christmas": { fullTitle: "The Twelve Days of Christmas", wordsBy: "Traditional English (1780)", year: "1780", pdNote: "Traditional English cumulative song first published in 1780. Public domain worldwide." },
+    "We wish you a merry christmas": { fullTitle: "We Wish You a Merry Christmas", wordsBy: "Traditional English (16th century)", year: "16th c.", pdNote: "Traditional English folk carol from the 16th century. Public domain worldwide." }
   };
 
-const recordings = [
-  { song: "Angels Of The Realms Of Glory", artist: "Alistair Hearth", isrc: "VNA1W2512011", date: 45981 },
-  { song: "As With Gladness Men Of Old", artist: "Alistair Hearth", isrc: "VNA1W2512012", date: 45981 },
-  { song: "Auld Lang Syn", artist: "Alistair Hearth", isrc: "VNA1W2512013", date: 45981 },
-  { song: "Coventry Carol", artist: "Alistair Hearth", isrc: "VNA1W2512014", date: 45981 },
-  { song: "Good Christian Men, Rejoice", artist: "Alistair Hearth", isrc: "VNA1W2512015", date: 45981 },
-  { song: "Good King Wenceslas", artist: "Alistair Hearth", isrc: "VNA1W2512016", date: 45981 },
-  { song: "I Heard The Bells On Christmas Day", artist: "Alistair Hearth", isrc: "VNA1W2512017", date: 45981 },
-  { song: "Infant Holy, Infant Lowly", artist: "Alistair Hearth", isrc: "VNA1W2512018", date: 45981 },
-  { song: "Jolly Old Saint Nicholas", artist: "Alistair Hearth", isrc: "VNA1W2512019", date: 45981 },
-  { song: "O Christmas Tree", artist: "Alistair Hearth", isrc: "VNA1W2512020", date: 45981 },
-  { song: "O Come, O Come, Emmanuel", artist: "Alistair Hearth", isrc: "VNA1W2512021", date: 45981 },
-  { song: "O Little Town of Bethlehem", artist: "Alistair Hearth", isrc: "VNA1W2512022", date: 45981 },
-  { song: "Sussex Carol", artist: "Alistair Hearth", isrc: "VNA1W2512023", date: 45981 },
-  { song: "The Boar’s Head Carol", artist: "Alistair Hearth", isrc: "VNA1W2512024", date: 45981 },
-  { song: "The Holly And The Ivy", artist: "Alistair Hearth", isrc: "VNA1W2512025", date: 45981 },
-  { song: "The Twelve Days Of Christmas", artist: "Alistair Hearth", isrc: "VNA1W2512026", date: 45981 },
-  { song: "Ding Dong Merrily On High", artist: "Alistair Hearth", isrc: "VNA1W2512027", date: 45981 },
-  { song: "Go Tell It On The Mountain", artist: "Alistair Hearth", isrc: "VNA1W2512028", date: 45981 },
-  { song: "In The Bleak Midwinter", artist: "Alistair Hearth", isrc: "VNA1W2512029", date: 45981 },
-  { song: "Away in a Manger", artist: "Alistair Hearth", isrc: "VNA1W2512001", date: 45974 },
-  { song: "Deck the Halls", artist: "Alistair Hearth", isrc: "VNA1W2512002", date: 45974 },
-  { song: "God Rest Ye Merry Gentlemen", artist: "Alistair Hearth", isrc: "VNA1W2512003", date: 45974 },
-  { song: "Hark The Herald Angels Sing", artist: "Alistair Hearth", isrc: "VNA1W2512004", date: 45974 },
-  { song: "Joy to the World", artist: "Alistair Hearth", isrc: "VNA1W2512005", date: 45974 },
-  { song: "O Come, All Ye Faithful", artist: "Alistair Hearth", isrc: "VNA1W2512006", date: 45974 },
-  { song: "O Holy Night", artist: "Alistair Hearth", isrc: "VNA1W2512007", date: 45974 },
-  { song: "Silent Night", artist: "Alistair Hearth", isrc: "VNA1W2512008", date: 45974 },
-  { song: "The First Noel", artist: "Alistair Hearth", isrc: "VNA1W2512009", date: 45974 },
-  { song: "We Wish You a Merry Christmas", artist: "Alistair Hearth", isrc: "VNA1W2512010", date: 45974 },
-  { song: "Come Ye Lofty", artist: "Alex C.", isrc: "VNKH12514280", date: "10/31/2025" },
-  { song: "Let All Mortal Flesh Keep Silence", artist: "Alex C.", isrc: "VNKH12514281", date: "10/31/2025" },
-  { song: "Toyland Song", artist: "Alex C.", isrc: "VNKH12514282", date: "10/31/2025" },
-  { song: "Angels Of The Realms Of Glory", artist: "Alex C.", isrc: "VNA1W2100090", date: 44327 },
-  { song: "Angels We Have Heard On High", artist: "Alex C.", isrc: "VNA1W2412032", date: 45632 },
-  { song: "Auld Lang Syne", artist: "Alex C.", isrc: "VNA1W2100084", date: 44327 },
-  { song: "Hark The Herald Angels Sing", artist: "Alex C.", isrc: "VNA1W2100085", date: 44327 },
-  { song: "In Dulci Jubilo", artist: "Alex C.", isrc: "VNA1W2100101", date: 44547 },
-  { song: "In The Bleak Midwinter", artist: "Alex C.", isrc: "VNA1W2100086", date: 44327 },
-  { song: "It Came Upon The Midnight Clear", artist: "Alex C.", isrc: "VNA1W2100073", date: 44327 },
-  { song: "Jingle Bells ver2", artist: "Alex C.", isrc: "VNA1W2412036", date: 44536 },
-  { song: "Jingle Bells", artist: "Alex C.", isrc: "VNA1W2100065", date: 44327 },
-  { song: "Joy to the World", artist: "Alex C.", isrc: "VNA1W2100071", date: 44327 },
-  { song: "O Christmas Tree 1", artist: "Alex C.", isrc: "VNA1W2412031", date: 45632 },
-  { song: "O Christmas Tree", artist: "Alex C.", isrc: "VNA1W2100076", date: 44327 },
-  { song: "O Come, All Ye Faithful", artist: "Alex C.", isrc: "VNA1W2100089", date: 44327 },
-  { song: "O Holy Night", artist: "Alex C.", isrc: "VNA1W2100068", date: 44327 },
-  { song: "O Little Town of Bethlehem", artist: "Alex C.", isrc: "VNA1W2100088", date: 44328 },
-  { song: "Silent Night", artist: "Alex C.", isrc: "VNA1W2100064", date: 44329 },
-  { song: "The First Noel", artist: "Alex C.", isrc: "VNA1W2100072", date: 44330 },
-  { song: "Twelve Days off Christmas", artist: "Alex C.", isrc: "VNA1W2100077", date: 44331 },
-  { song: "We wish you a merry christmas", artist: "Alex C.", isrc: "VNA1W2100069", date: 44332 },
-  { song: "The Cherry Tree Carol", artist: "Alistair Hearth", isrc: "VNA1W2512030", date: "11/20/2025" }
-];
+  const recordings = [
+    { song: "Angels From The Realms Of Glory", artist: "Alistair Hearth", isrc: "VNA1W2512011", date: 45981 },
+    { song: "As With Gladness Men Of Old", artist: "Alistair Hearth", isrc: "VNA1W2512012", date: 45981 },
+    { song: "Auld Lang Syn", artist: "Alistair Hearth", isrc: "VNA1W2512013", date: 45981 },
+    { song: "Coventry Carol", artist: "Alistair Hearth", isrc: "VNA1W2512014", date: 45981 },
+    { song: "Good Christian Men, Rejoice", artist: "Alistair Hearth", isrc: "VNA1W2512015", date: 45981 },
+    { song: "Good King Wenceslas", artist: "Alistair Hearth", isrc: "VNA1W2512016", date: 45981 },
+    { song: "I Heard The Bells On Christmas Day", artist: "Alistair Hearth", isrc: "VNA1W2512017", date: 45981 },
+    { song: "Infant Holy, Infant Lowly", artist: "Alistair Hearth", isrc: "VNA1W2512018", date: 45981 },
+    { song: "Jolly Old Saint Nicholas", artist: "Alistair Hearth", isrc: "VNA1W2512019", date: 45981 },
+    { song: "O Christmas Tree", artist: "Alistair Hearth", isrc: "VNA1W2512020", date: 45981 },
+    { song: "O Come, O Come, Emmanuel", artist: "Alistair Hearth", isrc: "VNA1W2512021", date: 45981 },
+    { song: "O Little Town Of Bethlehem", artist: "Alistair Hearth", isrc: "VNA1W2512022", date: 45981 },
+    { song: "Sussex Carol", artist: "Alistair Hearth", isrc: "VNA1W2512023", date: 45981 },
+    { song: "The Boar’s Head Carol", artist: "Alistair Hearth", isrc: "VNA1W2512024", date: 45981 },
+    { song: "The Holly And The Ivy", artist: "Alistair Hearth", isrc: "VNA1W2512025", date: 45981 },
+    { song: "The Twelve Days Of Christmas", artist: "Alistair Hearth", isrc: "VNA1W2512026", date: 45981 },
+    { song: "Ding Dong Merrily On High", artist: "Alistair Hearth", isrc: "VNA1W2512027", date: 45981 },
+    { song: "Go Tell It On The Mountain", artist: "Alistair Hearth", isrc: "VNA1W2512028", date: 45981 },
+    { song: "In The Bleak Midwinter", artist: "Alistair Hearth", isrc: "VNA1W2512029", date: 45981 },
+    { song: "Away in a Manger", artist: "Alistair Hearth", isrc: "VNA1W2512001", date: 45974 },
+    { song: "Deck the Halls", artist: "Alistair Hearth", isrc: "VNA1W2512002", date: 45974 },
+    { song: "God Rest Ye Merry Gentlemen", artist: "Alistair Hearth", isrc: "VNA1W2512003", date: 45974 },
+    { song: "Hark! The Herald Angels Sing", artist: "Alistair Hearth", isrc: "VNA1W2512004", date: 45974 },
+    { song: "Joy to the World", artist: "Alistair Hearth", isrc: "VNA1W2512005", date: 45974 },
+    { song: "O Come, All Ye Faithful", artist: "Alistair Hearth", isrc: "VNA1W2512006", date: 45974 },
+    { song: "O Holy Night", artist: "Alistair Hearth", isrc: "VNA1W2512007", date: 45974 },
+    { song: "Silent Night", artist: "Alistair Hearth", isrc: "VNA1W2512008", date: 45974 },
+    { song: "The First Noel", artist: "Alistair Hearth", isrc: "VNA1W2512009", date: 45974 },
+    { song: "We Wish You a Merry Christmas", artist: "Alistair Hearth", isrc: "VNA1W2512010", date: 45974 },
+    { song: "Come Ye Lofty", artist: "Alex C.", isrc: "VNKH12514280", date: "10/31/2025" },
+    { song: "Let All Mortal Flesh Keep Silence", artist: "Alex C.", isrc: "VNKH12514281", date: "10/31/2025" },
+    { song: "Toyland Song", artist: "Alex C.", isrc: "VNKH12514282", date: "10/31/2025" },
+    { song: "Angels Of The Realms Of Glory", artist: "Alex C.", isrc: "VNA1W2100090", date: 44327 },
+    { song: "Angels We Have Heard On High", artist: "Alex C.", isrc: "VNA1W2412032", date: 45632 },
+    { song: "Auld Lang Syne", artist: "Alex C.", isrc: "VNA1W2100084", date: 44327 },
+    { song: "Hark The Herald Angels Sing", artist: "Alex C.", isrc: "VNA1W2100085", date: 44327 },
+    { song: "In Dulci Jubilo", artist: "Alex C.", isrc: "VNA1W2100101", date: 44547 },
+    { song: "In The Bleak Midwinter", artist: "Alex C.", isrc: "VNA1W2100086", date: 44327 },
+    { song: "It Came Upon The Midnight Clear", artist: "Alex C.", isrc: "VNA1W2100073", date: 44327 },
+    { song: "Jingle Bells ver2", artist: "Alex C.", isrc: "VNA1W2412036", date: 44536 },
+    { song: "Jingle Bells", artist: "Alex C.", isrc: "VNA1W2100065", date: 44327 },
+    { song: "Joy to the World", artist: "Alex C.", isrc: "VNA1W2100071", date: 44327 },
+    { song: "O Christmas Tree 1", artist: "Alex C.", isrc: "VNA1W2412031", date: 45632 },
+    { song: "O Christmas Tree", artist: "Alex C.", isrc: "VNA1W2100076", date: 44327 },
+    { song: "O Come All Ye Faithful", artist: "Alex C.", isrc: "VNA1W2100089", date: 44327 },
+    { song: "O Holy Night", artist: "Alex C.", isrc: "VNA1W2100068", date: 44327 },
+    { song: "O Little Town of Bethlehem", artist: "Alex C.", isrc: "VNA1W2100088", date: 44328 },
+    { song: "Silent Night", artist: "Alex C.", isrc: "VNA1W2100064", date: 44329 },
+    { song: "The first Noel", artist: "Alex C.", isrc: "VNA1W2100072", date: 44330 },
+    { song: "Twelve Days off Christmas", artist: "Alex C.", isrc: "VNA1W2100077", date: 44331 },
+    { song: "We wish you a merry christmas", artist: "Alex C.", isrc: "VNA1W2100069", date: 44332 }
+  ];
 
-  // === GỢI Ý BÀI HÁT ===
+  // Datalist gợi ý
   const songList = document.getElementById("songList");
   Object.keys(pdSongs).sort().forEach(title => {
     const opt = document.createElement("option");
@@ -228,19 +225,12 @@ const recordings = [
     songList.appendChild(opt);
   });
 
-  // === CẬP NHẬT THÔNG TIN NGHỆ SĨ ===
   function updateArtistInfo() {
     const artist = document.getElementById("artistSelect").value;
     const info = document.getElementById("artistInfo");
-    if (artist) {
-      const count = recordings.filter(r => r.artist === artist).length;
-      info.textContent = `${artist} có ${count} bản cover (Warner Music)`;
-    } else {
-      info.textContent = "";
-    }
+    info.textContent = artist ? `${artist} có ${recordings.filter(r => r.artist === artist).length} bản cover` : "";
   }
 
-  // === FORMAT NGÀY ===
   function formatDate(input) {
     if (!input) return "N/A";
     if (typeof input === "number") {
@@ -250,55 +240,40 @@ const recordings = [
     return input;
   }
 
-// HÀM TÌM SIÊU THÔNG MINH – CHỈ CHẠY KHI BẤM NÚT TẠO
-  function smartFindSong(input) {
-    if (!input) return null;
-    const s = input.trim().toLowerCase().replace(/[.,!?'"’]/g, '').replace(/\s+/g, ' ');
+  // === HÀM CHUẨN HÓA & TÌM KIẾM THÔNG MINH (FIX HOÀN TOÀN LỖI DẤU) ===
+  const normalize = (str) => str.toLowerCase().replace(/[.,!?'"’]/g, '').replace(/\s+/g, ' ').trim();
 
-    // 1. Khớp chính xác
+  function findSongKey(userInput) {
+    if (!userInput) return null;
+    const input = userInput.trim();
+    if (pdSongs[input]) return input;
+
+    const cleanInput = normalize(input);
+
+    // Tìm chính xác sau chuẩn hóa
     for (const key in pdSongs) {
-      if (key.toLowerCase() === s) return key;
+      if (normalize(key) === cleanInput) return key;
     }
 
-    // 2. Từ khóa mạnh (ưu tiên các bài nổi tiếng)
-    const strongKeywords = {
-      "silent night": "Silent Night",
-      "jingle bells": "Jingle Bells",
-      "o holy night": "O Holy Night",
-      "we wish you": "We Wish You a Merry Christmas",
-      "hark the herald": "Hark! The Herald Angels Sing",
-      "joy to the world": "Joy to the World",
-      "o come all ye": "O Come, All Ye Faithful",
-      "deck the halls": "Deck the Halls",
-      "first noel": "The First Noel"
-    };
-    if (strongKeywords[s]) return strongKeywords[s];
-
-    // 3. Tìm theo từ khóa (ít nhất 60% từ khớp)
-    const words = s.split(' ').filter(w => w.length > 2);
+    // Tìm gần đúng
+    const words = cleanInput.split(' ').filter(w => w.length > 2);
     if (words.length === 0) return null;
 
     let best = null;
     let bestScore = 0;
-
     for (const key in pdSongs) {
-      const cleanKey = key.toLowerCase().replace(/[.,!?'"’]/g, '');
-      let score = 0;
-      for (const w of words) {
-        if (cleanKey.includes(w)) score++;
-      }
+      const cleanKey = normalize(key);
+      let score = words.filter(w => cleanKey.includes(w)).length;
       if (score > bestScore || (score === bestScore && key.length < (best?.length || 999))) {
         bestScore = score;
         best = key;
       }
     }
-
     return (bestScore >= Math.max(2, words.length * 0.6)) ? best : null;
   }
 
-  // TẠO NỘI DUNG – DÙNG HÀM THÔNG MINH
   function generateDispute() {
-    const raw =  document.getElementById("songInput").value;
+    const raw = document.getElementById("songInput").value.trim();
     const artist = document.getElementById("artistSelect").value;
     const resultDiv = document.getElementById("result");
 
@@ -307,15 +282,14 @@ const recordings = [
       return;
     }
 
-    const songKey = smartFindSong(raw);
+    const songKey = findSongKey(raw);
     if (!songKey) {
-      resultDiv.innerHTML = `<p class="error">Không tìm được bài hát nào phù hợp với:<br><strong>“${raw}”</strong></p>`;
+      resultDiv.innerHTML = `<p class="error">Không tìm thấy bài hát nào phù hợp với:<br><strong>“${raw}”</strong></p>`;
       return;
     }
 
-    const pd = pdSongs[songKey];
-    const rec = recordings.find(r => r.song === songKey && r.artist === artist);
-
+    // TÌM RECORDING DÙ CÓ DẤU HAY KHÔNG
+    const rec = recordings.find(r => normalize(r.song) === normalize(songKey) && r.artist === artist);
     if (!rec) {
       resultDiv.innerHTML = `<p class="error">Không có bản cover <strong>${songKey}</strong> của <strong>${artist}</strong>!</p>`;
       return;
@@ -327,14 +301,14 @@ const recordings = [
 SUBJECT: RELEASE OF CONTENT ID CLAIM - COMPOSITION IS PUBLIC DOMAIN
 
 1. ORIGINAL SONG AND PUBLIC DOMAIN INFORMATION:
-Full Title: ${pd.fullTitle}
-Words by: ${pd.wordsBy}
-Year of Composition: ${pd.year}
-Copyright Status: ${pd.pdNote} This means the core melody and lyrics are no longer protected by copyright and can be used freely. (Copyright regulations are detailed in the United States Copyright Act, Title 17 Code.)
+Full Title: ${pdSongs[songKey].fullTitle}
+Words by: ${pdSongs[songKey].wordsBy}
+Year of Composition: ${pdSongs[songKey].year}
+Copyright Status: ${pdSongs[songKey].pdNote} This means the core melody and lyrics are no longer protected by copyright and can be used freely. (Copyright regulations are detailed in the United States Copyright Act, Title 17 Code.)
 
 2. SOUND RECORDING ASSERTION:
 Our video uses a cover version (new Sound Recording) produced by our company, based entirely on the original Public Domain melody.
-Full Title: ${pd.fullTitle}
+Full Title: ${pdSongs[songKey].fullTitle}
 Cover Artist: ${rec.artist}
 ISRC: ${rec.isrc}
 Release Date: ${releaseDate}
@@ -347,30 +321,24 @@ We request the Claimant verify and release the Claim immediately. If the Claim i
     resultDiv.innerHTML = `
       <div class="output">${content}</div>
       <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
-      <p class="success">Tạo thành công! Dán vào YouTube</p>
+      <p class="success">Tìm thấy: <strong>${songKey}</strong> → Tạo thành công!</p>
     `;
-
     window.lastContent = content;
   }
 
-  // === COPY TO CLIPBOARD ===
   function copyToClipboard() {
     const textarea = document.createElement("textarea");
-    textarea.value = window.lastContent;
-    textarea.style.position = "fixed"; textarea.style.opacity = "0";
+    textarea.value = window.lastContent || "";
     document.body.appendChild(textarea);
     textarea.select();
-    try {
-      document.execCommand("copy");
-      alert("Đã copy vào clipboard!");
-    } catch (err) {
-      prompt("Copy thất bại. Dán thủ công:", window.lastContent);
-    }
+    document.execCommand("copy");
     document.body.removeChild(textarea);
+    alert("Đã copy vào clipboard!");
   }
 </script>
 </body>
 </html>
+
 
 
 
